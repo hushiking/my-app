@@ -45,10 +45,28 @@ class Board extends React.Component {
     } else {
       style = 'square'
     }
-    return <Square style={style} value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
+    return <Square style={style} key={i} value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
   }
 
   render() {
+    return (
+      <div>
+        {
+          Array(3).fill(null).map((v, i) =>(
+            <div className="board-row" key={i}>
+              {
+                Array(3).fill(null).map((v, j) =>(
+                  this.renderSquare(3 * i + j)
+                ))
+              }
+            </div>
+          ))
+        }
+      </div>
+    )
+  }
+
+  renderDeprecated() {
     /* const winner = calculateWinner(this.state.squares)
     let status
     if (winner) {
@@ -158,12 +176,12 @@ class Game extends React.Component {
     if (winner) {
       status = 'Winner: ' + winner
       line = calculateWinner(current.squares).line
+    } else if (this.state.stepNumber >= 9) { // history.length 也可
+      status = 'This is a draw'
+      line = []
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
       line = []
-      if (this.state.stepNumber >= 9) {
-        alert('平局')
-      }
     }
 
     return (
