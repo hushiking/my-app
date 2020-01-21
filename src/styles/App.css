@@ -1,0 +1,49 @@
+#root {
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+.ant-row, .ant-col {
+  height: 100%;
+}
+#operation_btns {
+  background-color: cadetblue;
+  border-radius: 10px;
+}
+#operation_btns > button {
+  margin: 10px;
+}
+.my_promise {
+  background-color: cornflowerblue;
+}
+.my_promise .title {
+  padding: 5px 10px;
+  color: cornflowerblue;
+  background-color: white;
+  border-radius: 10px;
+}
+.native_promise {
+  background-color: darksalmon;
+}
+.native_promise .title {
+  padding: 5px 10px;
+  color: darksalmon;
+  background-color: white;
+  border-radius: 10px;
+}
+.pro_item {
+  padding: 20px;
+  height: 50%;
+  border-radius: 10px;
+}
+.test_info {
+  font-weight: 700;
+  color: white;
+}
+.log_output {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  height: 70%;
+}
