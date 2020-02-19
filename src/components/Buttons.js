@@ -33,7 +33,7 @@ function Buttons(props) {
     <Fragment>
       {
         info.map((value, index) => {
-        return <Button onClick={() => run(index)} key={index}>{index}-{value}</Button>
+          return <Button onClick={() => run(index)} key={index}>{index}-{value}</Button>
         }
         )
       }
