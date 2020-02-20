@@ -21,22 +21,26 @@ class MyPromise {
 
     let _this = this
     function resolve(...arg) {
-      if (_this.status === 'pending') {
-        _this.__succ_res = arg;
-        _this.status = 'success';
-        _this.__queue.forEach(json => {
-          json.resolve(...arg);
-        });
-      }
+      setTimeout(() => {
+        if (_this.status === 'pending') {
+          _this.__succ_res = arg;
+          _this.status = 'success';
+          _this.__queue.forEach(json => {
+            json.resolve(...arg);
+          });
+        }
+      }, 0)
     }
     function reject(...arg) {
-      if (_this.status === 'pending') {
-        _this.__err_res = arg;
-        _this.status = 'error';
-        _this.__queue.forEach(json => {
-          json.reject(...arg);
-        });
-      }
+      setTimeout(() => {
+        if (_this.status === 'pending') {
+          _this.__err_res = arg;
+          _this.status = 'error';
+          _this.__queue.forEach(json => {
+            json.reject(...arg);
+          });
+        }
+      }, 0)
     }
     try {
       callback(resolve, reject)

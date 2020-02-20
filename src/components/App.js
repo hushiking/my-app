@@ -1292,6 +1292,7 @@ class App extends React.Component {
   test27(_Promise) {
     function fn27(resolve, reject) {
       console.log(_Promise === Promise ? 'Promise' : 'MyPromise', 'running fn27');
+      // throw new Error('err@fn27')
       resolve('resolve @fn27')
     };
     console.log(_Promise === Promise ? 'Promise' : 'MyPromise', 'start');
